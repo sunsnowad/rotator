@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding="10dip"
+	android:background="@drawable/styledefault">
+	<EditText
+		android:id="@+id/textAddPie"
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:textSize="20sp"
+		android:lines="1">
+	</EditText>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="center_horizontal"
+		android:padding="10dip">
+		<Button
+			android:id="@+id/buttonAddPie"
+			android:text="@string/newPieOK"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="20dip"
+			android:textSize="20sp">
+		</Button>
+		<Button
+			android:id="@+id/buttonPieCancel"
+			android:text="@string/newPieCancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="20dip"
+			android:textSize="20sp">
+		</Button>
+	</LinearLayout>
+
+</LinearLayout>

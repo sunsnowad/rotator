@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, StartActivity!</string>
+    <string name="app_name">RotatoR</string>
+    <string name="MyRotatoR">我 的 转 盘  </string>
+    <string name="MagicRotatoR">神 奇 转 盘  </string>
+    <string name="About">关		于  </string>
+    <string name="Exit">退		出  </string>
+    
+    <string name="aboutText">作品名称:RotatoR \n版本号：1.0 
+  \n作者：杜一 \n联系方式：duyi001@gmail.com</string>
+  
+  	<string name="resultText">选中了：</string>
+  
+  	<string name="newPieOK">添加</string>
+  	<string name="newPieCancel">取消</string>
+  	
+  	<string name="modifyPieOk">修改</string>
+  	<string name="delPie">删除</string>
+  	
+</resources>
