@@ -30,13 +30,16 @@ public class ModifyPieActivity extends Activity{
 		final EditText text = (EditText)findViewById(R.id.textModifyPie);
 		text.setText(getIntent().getExtras().getString(Choose.CHOOSE_NAME));
 		
+		final int selectionIndex = 
+			getIntent().getExtras().getInt(RotatorActivity.SELECTION_INDEX);
+		
 		Button buttonOk = (Button)findViewById(R.id.buttonModifyPie);
 		buttonOk.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
 				Intent i = new Intent(ModifyPieActivity.this, RotatorActivity.class);
 				i.putExtra(Choose.CHOOSE_NAME, text.getText().toString());
-				
+				i.putExtra(RotatorActivity.SELECTION_INDEX, selectionIndex);
 				setResult(RESULT_OK, i);
 				finish();
 			}
@@ -46,10 +49,11 @@ public class ModifyPieActivity extends Activity{
 		buttonCancel.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				setResult(RESULT_CANCELED, null);
+				Intent i = new Intent(ModifyPieActivity.this, RotatorActivity.class);
+				i.putExtra(RotatorActivity.SELECTION_INDEX, selectionIndex);
+				setResult(RESULT_CANCELED, i);
 				finish();
 			}
 		});
 	}
-
 }
