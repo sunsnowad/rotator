@@ -134,14 +134,13 @@ public class RotatorView extends View {
 		// 绘制外圈
 		paint.setColor(Color.DKGRAY);
 		paint.setStyle(Paint.Style.STROKE);
-		
+		paint.setStrokeWidth(5);
 		canvas.drawCircle(centerX, centerY, radiusOfBigCircle + 1, paint);
-
+		paint.setStrokeWidth(0.5f);
 		int numOfPie = rotator.getChooseList().size();
 		if (numOfPie == 0) {
 			// draw the big circle
 			paint.setColor(Color.GRAY);
-			paint.setStrokeWidth(3);
 			canvas.drawCircle(centerX, centerY, radiusOfBigCircle, paint);
 		} else if (numOfPie > 0) {
 			float angleOfPie = 360 / numOfPie;
@@ -163,7 +162,6 @@ public class RotatorView extends View {
 				canvas.drawPath(testPath, paint);
 				
 				paint.setColor(Color.BLACK);
-
 				paint.setTextSize(getResources().getDimension(R.dimen.sizePieText));
 				canvas.drawTextOnPath(rotator.getChooseList().get(i).getName(),
 						testPath, getResources().getDimension(R.dimen.sizePieText),
