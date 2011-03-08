@@ -10,7 +10,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class StartActivity extends Activity {
-    /** Called when the activity is first created. */
+	
+    public static final String SHOW_TIP = "showTip";
+
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +46,12 @@ public class StartActivity extends Activity {
 				Intent i = new Intent(StartActivity.this, RotatorActivity.class);
 				startActivity(i);
 			}
-		});
+		});        
     }
+
+
+    
+    
     
     
 }
