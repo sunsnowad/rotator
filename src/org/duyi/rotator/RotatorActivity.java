@@ -22,7 +22,6 @@ public class RotatorActivity extends Activity{
 	private static final String ROTATOR_HISTORY = "rotatorhistory";
 	private static final int SHOW_ADDPIE = 1;
 	private static final int SHOW_MODIFYPIE = 2;
-//	private static final int SHOW_RESULT = 3;
 	
 	private ArrayList<Choose> chooseList;
 	private RotatorView view;
@@ -105,7 +104,6 @@ public class RotatorActivity extends Activity{
 	protected void onPause() {
 		//save data to local
 		String result = xstream.toXML(chooseList);
-//		Log.d(TAG, "chooseList save:"+result);
 		Log.d(TAG, "rotator activity pause");
 		getPreferences(MODE_PRIVATE).edit().putString(ROTATOR_HISTORY, result).commit();
 		//stop all handler in view
