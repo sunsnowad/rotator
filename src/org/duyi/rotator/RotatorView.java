@@ -99,6 +99,7 @@ public class RotatorView extends View {
 		// 绘制外圈
 		paint.setColor(Color.DKGRAY);
 		paint.setStyle(Paint.Style.STROKE);
+		
 		canvas.drawCircle(centerX, centerY, radiusOfBigCircle + 1, paint);
 
 		int numOfPie = rotator.getChooseList().size();
@@ -110,11 +111,12 @@ public class RotatorView extends View {
 		} else if (numOfPie > 0) {
 			float angleOfPie = 360 / numOfPie;
 			Path testPath;
+			paint.setStyle(Paint.Style.FILL_AND_STROKE);
 			for (int i = 0; i < numOfPie; i++) {
 				testPath = new Path();
 				testPath.setFillType(FillType.EVEN_ODD);
 				paint.setColor(colors[i]);
-
+				paint.setAlpha(100);
 				testPath.addArc(rectBigCircle,
 						currentRotation + i * angleOfPie, angleOfPie);
 				testPath.lineTo(centerX, centerY);
@@ -124,11 +126,16 @@ public class RotatorView extends View {
 				testPath.lineTo(centerX, centerY);
 				testPath.close();
 				canvas.drawPath(testPath, paint);
+				
 				paint.setColor(Color.BLACK);
-				paint.setTextSize(R.dimen.sizePieText);
+				//TODO resolution independent
+				paint.setTextSize(20);
 				canvas.drawTextOnPath(rotator.getChooseList().get(i).getName(),
-						testPath, R.dimen.sizePieText,
-						R.dimen.sizePieText * 1.5f, paint);
+						testPath, 20, 30, paint);
+//				paint.setTextSize(R.dimen.sizePieText);
+//				canvas.drawTextOnPath(rotator.getChooseList().get(i).getName(),
+//						testPath, R.dimen.sizePieText,
+//						R.dimen.sizePieText * 1.5f, paint);
 			}
 		} else {
 
